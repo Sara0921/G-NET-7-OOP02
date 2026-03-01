@@ -50,7 +50,7 @@
     //        } }
     //}
     //c) Yes, a class can have multiple indexers, as long as they have different parameter types (overloading).
-   // a class that lets you access students by number OR by name:
+    // a class that lets you access students by number OR by name:
     //public string this[int index]
     //{
     //    get { return names[index]; }
@@ -60,6 +60,12 @@
     //{
     //    get { return Array.IndexOf(names, name); } 
     //}
+    #endregion
+    #region Question04
+    //a) static on TotalOrders:TotalOrders belongs to the class itself — one shared copy for everyone.Every time a new Order object is created, the same TotalOrders increments.
+    // Item is an instance field — each object has its own separate value
+    //b) No — a static method cannot access Item directly.
+    //Item belongs to a specific object. A static method has no this, so it doesn't know which object's Item to access
     #endregion
     #endregion
     internal class Program
