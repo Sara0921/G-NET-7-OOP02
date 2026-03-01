@@ -32,6 +32,35 @@
     //    { get { return _radius * _radius * Math.PI; } 
     //}
     #endregion
+    #region Question03
+    //a) It's called an Indexer.>>It lets you access an object using square bracket syntax (register[0]) just like an array
+    //b)it causes an IndexOutOfRangeException because the array only has 5 slots
+    //>> to make it safer add a bound check
+    //public class StudentRegister
+    //{
+    //    private string[] names = new string[5];
+    //    public string this[int index]
+    //    { get { return names[index]; }
+    //        set
+    //        {
+    //            if (index >= 0 && index < names.Length) //bound check
+    //                names[index] = value;
+    //            else
+    //                Console.WriteLine("Index out of Range");
+    //        } }
+    //}
+    //c) Yes, a class can have multiple indexers, as long as they have different parameter types (overloading).
+   // a class that lets you access students by number OR by name:
+    //public string this[int index]
+    //{
+    //    get { return names[index]; }
+    //}
+
+    //public int this[string name]
+    //{
+    //    get { return Array.IndexOf(names, name); } 
+    //}
+    #endregion
     #endregion
     internal class Program
     {
