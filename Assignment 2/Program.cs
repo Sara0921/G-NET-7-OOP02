@@ -18,6 +18,20 @@
     // Any external code can set Balance to a negative number or zero out Owner without the object knowing or being able to react.
     // Encapsulation exists so the object controls its own state 
     #endregion
+    #region Question02
+    //>>A field is a plain variable stored directly in the class. A property is a controlled access point to data, using get/set accessors 
+    //>>Yes, a property can contain logic — validation, calculations, formatting, anything.
+    //>>Example of a read-only calculated property
+    //public class Circle
+    //{
+    //    private double _radius;
+
+    //    public double Radius { get { return _radius; } set { _radius = value; } }
+
+    //    public double Area
+    //    { get { return _radius * _radius * Math.PI; } 
+    //}
+    #endregion
     #endregion
     internal class Program
     {
