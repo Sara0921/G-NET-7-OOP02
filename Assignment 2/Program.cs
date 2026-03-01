@@ -68,11 +68,282 @@
     //Item belongs to a specific object. A static method has no this, so it doesn't know which object's Item to access
     #endregion
     #endregion
+    #region Part 02
+    //enum TicketType
+    //{
+    //    Standard,
+    //    VIP,
+    //    IMAX
+
+    //}
+    //struct Seat
+    //{
+    //    public char Row;
+    //    public int Number;
+
+    //    public Seat(char row, int number)
+    //    {
+    //        Row = row;
+    //        Number = number;
+    //    }
+
+    //    public override string ToString() => $"{Row}{Number}";
+
+    //}
+    //class Ticket
+    //{
+    //    public string _movieName;
+    //    public TicketType _type;
+    //    public Seat _seat;
+    //    private double _price;
+    //    //2.a
+    //    private static int ticketCounter = 0;
+    //    //2.b
+    //    public int Ticketid { get; private set; }
+
+    //    //1
+    //    //1.a)
+    //    public string MovieName
+    //    {
+    //        get { return _movieName; }
+    //        set
+    //        {
+    //            if (!string.IsNullOrEmpty(value))
+    //                _movieName = value;
+
+    //        }
+    //    }
+    //    //1.a)
+    //    public TicketType Type
+    //    {
+    //        get { return _type; }
+    //        set { _type = value; }
+    //    }
+    //    //1.a)
+    //    public Seat Seat
+    //    {
+    //        get { return _seat; }
+    //        set { _seat = value; }
+    //    }
+    //    //1.a)
+    //    public double Price
+    //    {
+    //        get { return _price; }
+    //        set
+    //        {
+    //            if (value > 0)
+    //                _price = value;
+    //        }
+    //    }
+    //    //1.b)
+    //    public double PriceAfterTax
+    //        => _price + (_price * 14.0 / 100);
+
+
+
+    //    public Ticket(string movieName, TicketType type, Seat seat, double price)
+    //    {
+    //        MovieName = movieName;
+    //        Type = type;
+    //        Seat = seat;
+    //        Price = price;
+    //        //2.b
+    //        ticketCounter++;
+    //        Ticketid = ticketCounter;
+    //    }
+    //    public Ticket(string movieName) : this(movieName, TicketType.Standard, new Seat('A', 1), 50) { }
+    //    //2.c
+    //    public static int GetTotalTicketsSold()
+    //        => ticketCounter;
+
+    //    public double CalcTotal(double taxPercent)
+    //    { return Price + (Price * taxPercent / 100); }
+
+
+
+    //    public void ApplyDiscount(ref double discountAmount)
+    //    {
+    //        if (discountAmount > 0 && discountAmount <= Price)
+    //        {
+    //            Price -= discountAmount;
+    //            discountAmount = 0;
+
+    //        }
+    //    }
+
+    //    public void PrintTicket(double taxPercent)
+    //    {
+    //        Console.WriteLine($"Movie : {MovieName}");
+    //        Console.WriteLine($"Type : {Type}");
+    //        Console.WriteLine($"Seat : {Seat}");
+    //        Console.WriteLine($"Price : {Price}");
+    //        Console.WriteLine($"Total ({taxPercent}% tax) : {CalcTotal(taxPercent)}");
+
+
+
+    //    }
+
+
+    //}
+    ////3
+    //class Cinema
+    //{
+    //    private Ticket[] tickets = new Ticket[20];
+    //    //3.a
+    //    public Ticket this[int index]
+    //    {
+    //        get
+    //        {
+    //            if (index < 0 || index >= tickets.Length)
+    //                return null;
+    //            return tickets[index];
+              
+    //        }
+    //        set {
+
+    //            if (index < 0 || index >= tickets.Length)
+    //                return ;
+    //            tickets[index] = value;
+
+
+    //        }
+
+    //    }
+    //    //2.b
+    //    public Ticket this[string movieName]
+    //    {
+    //        get {
+    //            foreach (Ticket t in tickets)
+    //            { 
+    //                if(t!=null && t.MovieName == movieName)
+    //                    return t;
+                
+    //            }
+    //            return null;
+    //        }
+
+    //    }
+    //    //3.c
+    //    public bool AddTicket(Ticket t)
+    //    { 
+    //        for (int i = 0; i < tickets.Length; i++)
+    //        {
+    //            if(tickets[i] == null)
+    //            {
+    //                tickets[i] = t;
+    //                return true;
+    //            }
+    //        }
+    //        return false;
+    //        {
+
+    //        }
+    //    }
+    //}
+
+    ////4
+    //static class BookingHelper
+    //{
+    //    //4.b
+    //    private static int counter = 0;
+    //    //4.a
+    //    public static double CalcGroupDiscount(int numberOfTickets, double pricePerTicket)
+    //    {
+    //        double total = numberOfTickets * pricePerTicket;
+    //        if (numberOfTickets > 5)
+    //        { 
+    //            return total - (total * 10.0/100);
+    //        }
+    //        return total;
+    //    }
+    //    //4.b
+    //    public static string GenerateBookingReference()
+    //    {
+    //        counter++;
+    //        return $"BK-{counter}";
+    //    }
+
+
+    //}
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
         {
+            #region Part02
+            ////5
+            //Cinema cinma = new Cinema();
+            //Console.WriteLine("========== Ticket Booking ==========\n");
+            ////5.a
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.WriteLine($"Enter data for Ticket {i+1}");
 
+            //    Console.Write("Movie Name : ");
+            //    string moviename = Console.ReadLine();
+
+            //    Console.Write("Ticket Type (0=Standard , 1=VIP , 2=IMAX) : ");
+            //    int tickettype = int.Parse(Console.ReadLine());
+            //    TicketType type = (TicketType)tickettype;
+
+            //    Console.Write("Seat Row (A-Z): ");
+            //    char row = Console.ReadLine().ToUpper()[0];
+
+            //    Console.Write("Seat Number: ");
+            //    int number = int.Parse(Console.ReadLine());
+
+            //    Console.Write("Price: ");
+            //    double price = double.Parse(Console.ReadLine());
+
+            //    Ticket t = new(moviename, type, new(row, number), price);
+
+            //    cinma.AddTicket(t);
+
+            //    Console.WriteLine();
+
+
+            //}
+            ////5.b
+            //Console.WriteLine("========== All Tickets ==========");
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Ticket t = cinma[i];
+            //    Console.WriteLine($"Ticket #{t.Ticketid} | {t.MovieName} | {t.Type} | " +
+            //              $"Seat: {t.Seat} | Price: {t.Price} EGP | " +
+            //              $"After Tax: {t.PriceAfterTax} EGP");
+
+            //}
+
+            ////5.c
+            //Console.WriteLine("\n========== Search by Movie ==========");
+            //Console.Write("Enter movie name to search: ");
+            //string search = Console.ReadLine();
+
+            //Ticket found = cinma[search];
+            //if (found != null)
+            //{
+            //    Console.WriteLine($"Found: Ticket #{found.Ticketid} | {found.MovieName} | " +
+            //              $"{found.Type} | Seat: {found.Seat} | Price: {found.Price} EGP");
+            //}
+            //else
+            //{ 
+            //    Console.WriteLine("Not found.");
+            //}
+
+            ////5.d
+            //Console.WriteLine("\n========== Statistics ==========");
+            //Console.WriteLine($"Total Tickests Sold : {Ticket.GetTotalTicketsSold()}");
+            //Console.WriteLine();
+            ////5.e
+            //Console.WriteLine($"Booking Reference 1:{BookingHelper.GenerateBookingReference()}");
+            //Console.WriteLine($"Booking Reference 2:{BookingHelper.GenerateBookingReference()}");
+            //Console.WriteLine();
+
+            ////5.f
+            //double GroupTotal = BookingHelper.CalcGroupDiscount(5, 80);
+            //Console.WriteLine($"Group Discount (5 tickets x 80 EGP): {GroupTotal} EGP (10% off applied)");
+
+            #endregion
         }
     }
 }
